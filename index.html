@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>For My Queen ♡</title><meta name="theme-color" content="#f7e8ef">
+<style>
+:root{--wine:#8e4265;--rose:#c66c91;--blush:#f7dce7;--ink:#513342;--muted:#896e7c;--paper:#fffafc;--gold:#c79b50}
+*{box-sizing:border-box}body{margin:0;color:var(--ink);font-family:Georgia,"Times New Roman",serif;background:radial-gradient(ellipse at top,#fff 0,#fff4f8 40%,#f2eafa 100%);min-height:100vh}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.25;background-image:radial-gradient(#c57c9b 1px,transparent 1px);background-size:26px 26px}
+.wrap{width:min(850px,92vw);margin:auto;padding:24px 0 55px;position:relative}
+.nav{display:flex;justify-content:space-between;gap:10px;align-items:center;color:var(--muted);font:14px system-ui;margin-bottom:18px}
+.tag{border:1px solid #efd4e0;background:#ffffffb8;padding:8px 13px;border-radius:30px}
+.card{background:#ffffffdf;border:1px solid #fff;border-radius:28px;padding:clamp(22px,5vw,44px);box-shadow:0 18px 55px #9e63831c;margin-bottom:17px}
+.center{text-align:center}.hidden{display:none!important}
+.kicker{font:12px system-ui;letter-spacing:.16em;text-transform:uppercase;color:var(--rose)}
+h1{font-size:clamp(38px,8vw,72px);line-height:1.02;letter-spacing:-.04em;margin:15px 0;color:var(--wine)}
+h2{font-size:clamp(25px,5vw,38px);margin:8px 0 14px;color:var(--wine)}
+h3{font-size:22px;color:var(--wine);margin:0 0 9px}
+p{font-size:17px;line-height:1.85;color:#735965}
+.small{font:14px/1.7 system-ui;color:var(--muted)}
+button{font:600 15px system-ui;border:0;cursor:pointer;transition:.18s}
+button:hover{transform:translateY(-2px)}
+button:focus-visible{outline:3px solid #d78aa8;outline-offset:3px}
+.primary{background:var(--wine);color:white;padding:14px 22px;border-radius:30px;box-shadow:0 8px 22px #8e42652a}
+.soft{background:#fff4f8;border:1px solid #efd3df;color:var(--wine);padding:11px 16px;border-radius:30px}
+.hero{overflow:hidden;position:relative}.crown{font-size:48px;display:block;filter:drop-shadow(0 5px 8px #d3a14d33)}
+.subtitle{max-width:590px;margin:0 auto 23px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.tile{background:#fff8fb;border:1px solid #f0dce5;border-radius:20px;padding:20px;text-align:left;color:var(--ink);min-height:135px}
+.tile .ico{font-size:27px;display:block;margin-bottom:10px}.tile strong{font-size:17px;display:block;margin-bottom:7px}.tile span{font:13px/1.5 system-ui;color:var(--muted)}
+.tile.active{border-color:var(--rose);box-shadow:0 0 0 3px #f8e1ea}
+.reveal{margin-top:15px;background:linear-gradient(135deg,#fff7fa,#f7f1fc);border-radius:20px;padding:23px;min-height:90px}
+.reveal p{margin:0}.letter{background:#fffdf8;border:1px dashed #dfc39b;border-radius:18px;padding:24px;line-height:1.95;font-size:17px;color:#6c505c}
+.row{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:16px}
+.bar{height:1px;background:#f0dce5;margin:22px 0}
+.footer{text-align:center;font:13px system-ui;color:#a18492;padding:8px}
+.float{position:fixed;z-index:5;pointer-events:none;animation:up 3s ease-out forwards;font-size:23px}
+@keyframes up{to{transform:translateY(-110vh) rotate(35deg);opacity:0}}
+@media(max-width:580px){.grid{grid-template-columns:1fr}.nav{font-size:12px}.card{border-radius:22px}}
+
+.memory-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:18px 0}
+.memory-card{overflow:hidden;border-radius:20px;background:#fff8fb;border:1px solid #f0dce5}
+.memory-card img,.memory-card video{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;background:#f8e9ef}
+.memory-card p{font:14px/1.5 system-ui;color:var(--muted);padding:0 14px 14px;margin:10px 0 0}
+.musicbox{border:1px solid #efd4e0;border-radius:20px;padding:18px;background:linear-gradient(135deg,#fff7fa,#f8f1fc);margin:16px 0}
+.musicbox audio{width:100%;margin-top:10px}
+@media(max-width:580px){.memory-grid{grid-template-columns:1fr}}
+
+.scene-gallery{display:grid;grid-template-columns:1fr;gap:16px;margin:20px 0}
+.scene{overflow:hidden;border-radius:22px;border:1px solid #f0dce5;background:#fff8fb;box-shadow:0 10px 28px #9e63831a}
+.scene img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
+.scene p{font:14px/1.6 system-ui;color:var(--muted);padding:0 17px 16px;margin:10px 0 0}
+
+.category-memory{margin-top:16px;border-radius:18px;overflow:hidden;background:#fff8fb;border:1px solid #f0dce5}
+.category-memory video{display:block;width:100%;max-height:330px;object-fit:contain;background:#2b1b24}
+.category-memory p{font:13px/1.6 system-ui;color:var(--muted);padding:10px 14px;margin:0}
+</style>
+</head>
+<body><main class="wrap">
+<div class="nav"><span class="tag">A little place made for you</span><span>♡ my queen ♡</span></div>
+<section class="card hero center" id="home">
+<span class="crown">♕</span><div class="kicker">For the girl who deserves to feel cherished</div>
+<h1>My sweet girl,<br>this is for you</h1>
+<p class="subtitle">A little reminder that you are loved for who you are, valued for all that you bring, and treasured even on the days you don't feel your best.</p>
+<button class="primary" onclick="enter()">Open your little love sanctuary ♡</button>
+</section>
+<section class="card hidden" id="main">
+<div class="center"><div class="kicker">A few things I want you to remember</div><h2>You are so much more than you realize</h2><p class="small">Tap each little card, my love. Take your time reading them.</p></div>
+<div class="grid" id="tiles">
+<button class="tile" onclick="reveal('seen',this)"><span class="ico">🌷</span><strong>Things I see in you</strong><span>Your beautiful qualities, beyond what you notice</span></button>
+<button class="tile" onclick="reveal('queen',this)"><span class="ico">👑</span><strong>Queen treatment</strong><span>A little reminder of how you deserve to be loved</span></button>
+<button class="tile" onclick="reveal('proud',this)"><span class="ico">✨</span><strong>I'm proud of you</strong><span>For the effort nobody else may see</span></button>
+<button class="tile" onclick="reveal('soft',this)"><span class="ico">🫂</span><strong>When everything feels heavy</strong><span>Open this when you need a softer moment</span></button>
+<button class="tile" onclick="reveal('open',this)"><span class="ico">💌</span><strong>Open when you miss me</strong><span>A little closeness from far away</span></button>
+<button class="tile" onclick="reveal('future',this)"><span class="ico">🌙</span><strong>One day, in person</strong><span>A tiny promise for our someday</span></button>
+</div>
+<div class="reveal center" id="reveal"><p class="small">Choose a card above and let me remind you of something, my love ♡</p></div>
+<div class="bar"></div>
+
+<div class="bar"></div>
+<div class="center"><div class="bar"></div>
+<div class="center"><div class="kicker">A little fairytale for my queen</div><h2>Your own rose garden 🌹</h2>
+<p class="small">A sunset picnic, soft lights, roses, and a teddy waiting to give you the biggest hug</p></div>
+<div class="scene-gallery">
+<div class="scene"><img src="assets/sunset-teddy-roses.png" alt="A teddy bear, roses, and a gift beneath a glowing sunset"><p>If I could plan the sweetest evening for you, it would be somewhere peaceful with roses, warm lights, your favourite treats, and me right beside you</p></div>
+<div class="scene"><img src="assets/queen-rose-garden.png" alt="A golden crown surrounded by roses in a fairytale garden"><p>For my queen: a crown to remind you that you deserve to feel treasured, respected, and loved every single day</p></div>
+</div>
+<div class="kicker">Our little memories</div><h2>My favourite little moments with you 💞</h2>
+<p class="small">These are pieces of us I wanted to keep close</p></div>
+<div class="memory-grid">
+<div class="memory-card"><video controls playsinline preload="metadata" poster="assets/bouquet-cartoon.png"><source src="assets/memory-video-1.mp4" type="video/mp4"></video><p>A real little moment from us ❤️</p></div>
+<div class="memory-card"><video controls playsinline preload="metadata" poster="assets/sunset-teddy-roses.png"><source src="assets/memory-video-2.mp4" type="video/mp4"></video><p>One of my favourite memories to keep close</p></div>
+<div class="memory-card"><video controls playsinline preload="metadata" poster="assets/queen-rose-garden.png"><source src="assets/memory-video-3.mp4" type="video/mp4"></video><p>Just us, and a memory I treasure</p></div>
+</div>
+<div class="musicbox center"><div class="kicker">Our soundtrack</div><h3>Dekhha Tenu ♫</h3><p class="small">A song that feels like looking at you and falling in love all over again</p>
+<audio id="loveSong" controls autoplay preload="auto" loop><source src="assets/dekhha-tenu.mp3" type="audio/mpeg">Your browser does not support audio playback.</audio>
+<p class="small" id="musicStatus">The song will try to start automatically at 20% volume. If your browser blocks autoplay, tap the sanctuary button or play here ♫</p></div>
+<div class="center"><button class="soft" onclick="showLetter()">A letter from your biggest admirer 💗</button></div>
+<div class="reveal hidden" id="letter"><div class="letter">My beautiful girl,<br><br>I hope you know how precious you are to me. Not because you always have everything together, not because you keep being strong, and not because you make everyone else happy. Just because you are you.<br><br>I see how hard you try, even when you're tired. I see the heart you carry, the courage it takes to keep going, and the little ways you care. I wish you could see yourself through my eyes for a moment, because you'd understand why I'm so proud of you.<br><br>You deserve kindness on your difficult days, patience when things feel messy, laughter that comes easily, and love that doesn't ask you to earn it. You deserve to be celebrated, protected, respected, and spoiled with all the little things that make you smile.<br><br>I may not be beside you right now, but I'm cheering for you with my whole heart. I can't wait for the day I can hold your hand, take you somewhere lovely, and make you feel this loved in person.<br><br>You're my woman, my favourite person, and the love of my life. I believe in you, always.<br><br>All my love,<br>Your biggest admirer ❤️</div></div>
+<div class="center row"><button class="primary" onclick="hearts()">A little shower of love 💕</button></div>
+</section>
+<section class="card center hidden" id="end"><span class="crown">♕</span><h2>One last reminder, my queen</h2><p>You don't have to shrink yourself, prove your worth, or carry every difficult thing alone. You are already valuable. You are already worthy of tenderness. And you are so, so loved.</p><p><strong>I'm proud of you, I'm rooting for you, and I choose you with a full heart. ❤️</strong></p><button class="soft" onclick="hearts()">Tap for more love</button><p class="small" id="endnote"></p></section>
+<div class="footer">Made with love, just for you ♡</div>
+</main>
+<script>
+const messages={
+seen:"I see your kindness, your thoughtful heart, your strength, your humour, and the way you keep trying even when things aren't easy. I notice more than you think, baba. You are beautiful in all the ways that matter and in so many ways you may not even realize.",
+queen:"My queen, you deserve to be treated with gentleness and respect. You deserve someone who listens, celebrates your wins, comforts you on hard days, and never makes you feel small. You deserve flowers just because, your favourite treats, forehead kisses, and a thousand little reasons to smile. Royal treatment isn't about a crown. It's about how precious you are.",
+proud:"I'm so proud of you. Not only for the things you achieve, but for every time you try again, every time you show up when you're tired, and every quiet effort nobody sees. You don't have to do everything perfectly for me to be proud of you. Your effort matters. You matter.",
+soft:"Come here, my love. Take a breath. You don't have to solve everything right now. Let the day be heavy without believing that you are weak. Rest your heart for a little while. You deserve softness too, and you don't have to earn it by being strong all the time.",
+open:"If I were there, I'd pull you into the gentlest hug, kiss your forehead, play with your hair, and remind you that you're my favourite person. Until I can do that in person, imagine me right beside you, holding your hand and smiling at you. Missing you, my sweet girl.",
+future:"One day there won't be a screen between us. I'll get to hold your hand, take you on little dates, bring you your favourite things, and spoil you with all the hugs and kisses I've been saving. Until then, I'm building toward that day and loving you from here."
+};
+function startLoveSong(){
+ const audio=document.getElementById('loveSong'); if(!audio)return;
+ audio.volume=0.2; audio.muted=false;
+ const status=document.getElementById('musicStatus');
+ audio.play().then(()=>{if(status)status.textContent='Playing our song softly at 20% volume ♫';}).catch(()=>{if(status)status.textContent='Your browser blocked autoplay. Tap the play button once to start our song ♫';});
+}
+function enter(){document.getElementById('home').classList.add('hidden');document.getElementById('main').classList.remove('hidden');hearts();startLoveSong();}
+document.addEventListener('DOMContentLoaded',()=>{const audio=document.getElementById('loveSong');if(audio){audio.volume=0.2;audio.play().catch(()=>{const status=document.getElementById('musicStatus');if(status)status.textContent='Autoplay may be blocked by your browser. Press Open sanctuary to start the song at 20% volume ♫';});}});
+const categoryClips={seen:'memory-video-1.mp4',queen:'memory-video-2.mp4',proud:'memory-video-3.mp4',soft:'memory-video-1.mp4',open:'memory-video-2.mp4',future:'memory-video-3.mp4'};
+const categoryCaptions={seen:'A real little moment of us, because I want you to remember how loved you are',queen:'A memory for my queen, with all the love and care you deserve',proud:'I am proud of you in this moment and in every little step you take',soft:'Take a breath and let this little memory keep you company',open:'A little piece of us for when you miss me',future:'One day we will make many more memories like this, together'};
+function reveal(key,el){
+ document.querySelectorAll('.tile').forEach(t=>t.classList.remove('active'));el.classList.add('active');
+ const video=categoryClips[key];
+ document.getElementById('reveal').innerHTML='<p>'+messages[key]+'</p><div class="category-memory"><video controls playsinline preload="metadata"><source src="assets/'+video+'" type="video/mp4">Your browser cannot play this video.</video><p>'+categoryCaptions[key]+'</p></div>';
+ document.getElementById('reveal').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+function showLetter(){document.getElementById('letter').classList.toggle('hidden');document.getElementById('letter').scrollIntoView({behavior:'smooth',block:'nearest'});document.getElementById('end').classList.remove('hidden');}
+function hearts(){const arr=['💗','💕','♡','✨','🌷','👑'];for(let i=0;i<30;i++){let s=document.createElement('span');s.className='float';s.textContent=arr[Math.floor(Math.random()*arr.length)];s.style.left=Math.random()*100+'vw';s.style.bottom='-30px';s.style.animationDelay=Math.random()*.7+'s';document.body.appendChild(s);setTimeout(()=>s.remove(),3600)}}
+</script></body></html>
