@@ -53,7 +53,7 @@ button:focus-visible{outline:3px solid #d78aa8;outline-offset:3px}
 
 .category-memory{margin-top:16px;border-radius:18px;overflow:hidden;background:#fff8fb;border:1px solid #f0dce5}
 .category-memory video{display:block;width:100%;max-height:330px;object-fit:contain;background:#2b1b24}
-.category-memory p{font:13px/1.6 system-ui;color:var(--muted);padding:10px 14px;margin:0}
+.category-memory p{font:13px/1.6 system-ui;color:var(--muted);padding:10px 14px;margin:0}\n.category-gif{display:block;width:100%;max-height:360px;object-fit:contain;background:#170f14;border-radius:16px;margin:14px 0}
 </style>
 </head>
 <body><main class="wrap">
@@ -94,7 +94,7 @@ button:focus-visible{outline:3px solid #d78aa8;outline-offset:3px}
 </div>
 <div class="musicbox center"><div class="kicker">Our soundtrack</div><h3>Dekhha Tenu ♫</h3><p class="small">A song that feels like looking at you and falling in love all over again</p>
 <audio id="loveSong" controls autoplay preload="auto" loop><source src="dekhha-tenu.mp3" type="audio/mpeg">Your browser does not support audio playback.</audio>
-<p class="small" id="musicStatus">The song will try to start automatically at 20% volume. If your browser blocks autoplay, tap the sanctuary button or play here ♫</p></div>
+<p class="small" id="musicStatus">The song will try to start automatically at 8% volume. If your browser blocks autoplay, tap the sanctuary button or play here ♫</p></div>
 <div class="center"><button class="soft" onclick="showLetter()">A letter from your biggest admirer 💗</button></div>
 <div class="reveal hidden" id="letter"><div class="letter">My beautiful girl,<br><br>I hope you know how precious you are to me. Not because you always have everything together, not because you keep being strong, and not because you make everyone else happy. Just because you are you.<br><br>I see how hard you try, even when you're tired. I see the heart you carry, the courage it takes to keep going, and the little ways you care. I wish you could see yourself through my eyes for a moment, because you'd understand why I'm so proud of you.<br><br>You deserve kindness on your difficult days, patience when things feel messy, laughter that comes easily, and love that doesn't ask you to earn it. You deserve to be celebrated, protected, respected, and spoiled with all the little things that make you smile.<br><br>I may not be beside you right now, but I'm cheering for you with my whole heart. I can't wait for the day I can hold your hand, take you somewhere lovely, and make you feel this loved in person.<br><br>You're my woman, my favourite person, and the love of my life. I believe in you, always.<br><br>All my love,<br>Your biggest admirer ❤️</div></div>
 <div class="center row"><button class="primary" onclick="hearts()">A little shower of love 💕</button></div>
@@ -113,18 +113,18 @@ future:"One day there won't be a screen between us. I'll get to hold your hand, 
 };
 function startLoveSong(){
  const audio=document.getElementById('loveSong'); if(!audio)return;
- audio.volume=0.2; audio.muted=false;
+ audio.volume=0.08; audio.muted=false;
  const status=document.getElementById('musicStatus');
- audio.play().then(()=>{if(status)status.textContent='Playing our song softly at 20% volume ♫';}).catch(()=>{if(status)status.textContent='Your browser blocked autoplay. Tap the play button once to start our song ♫';});
+ audio.play().then(()=>{if(status)status.textContent='Playing our song softly at 8% volume ♫';}).catch(()=>{if(status)status.textContent='Your browser blocked autoplay. Tap the play button once to start our song ♫';});
 }
 function enter(){document.getElementById('home').classList.add('hidden');document.getElementById('main').classList.remove('hidden');hearts();startLoveSong();}
-document.addEventListener('DOMContentLoaded',()=>{const audio=document.getElementById('loveSong');if(audio){audio.volume=0.2;audio.play().catch(()=>{const status=document.getElementById('musicStatus');if(status)status.textContent='Autoplay may be blocked by your browser. Press Open sanctuary to start the song at 20% volume ♫';});}});
+document.addEventListener('DOMContentLoaded',()=>{const audio=document.getElementById('loveSong');if(audio){audio.volume=0.08;audio.play().catch(()=>{const status=document.getElementById('musicStatus');if(status)status.textContent='Autoplay may be blocked by your browser. Press Open sanctuary to start the song at 8% volume ♫';});}});
 const categoryClips={seen:'memory-video-1.mp4',queen:'memory-video-2.mp4',proud:'memory-video-3.mp4',soft:'memory-video-1.mp4',open:'memory-video-2.mp4',future:'memory-video-3.mp4'};
-const categoryCaptions={seen:'A real little moment of us, because I want you to remember how loved you are',queen:'A memory for my queen, with all the love and care you deserve',proud:'I am proud of you in this moment and in every little step you take',soft:'Take a breath and let this little memory keep you company',open:'A little piece of us for when you miss me',future:'One day we will make many more memories like this, together'};
+const categoryGifs={seen:'romantic-gif-1.gif',queen:'romantic-gif-4.gif',proud:'romantic-gif-3.gif',soft:'romantic-gif-2.gif',open:'romantic-gif-3.gif',future:'romantic-gif-4.gif'};\nconst categoryCaptions={seen:'A real little moment of us, because I want you to remember how loved you are',queen:'A memory for my queen, with all the love and care you deserve',proud:'I am proud of you in this moment and in every little step you take',soft:'Take a breath and let this little memory keep you company',open:'A little piece of us for when you miss me',future:'One day we will make many more memories like this, together'};
 function reveal(key,el){
  document.querySelectorAll('.tile').forEach(t=>t.classList.remove('active'));el.classList.add('active');
  const video=categoryClips[key];
- document.getElementById('reveal').innerHTML='<p>'+messages[key]+'</p><div class="category-memory"><video controls playsinline preload="metadata"><source src="'+video+'" type="video/mp4">Your browser cannot play this video.</video><p>'+categoryCaptions[key]+'</p></div>';
+ document.getElementById('reveal').innerHTML='<p>'+messages[key]+'</p><img class="category-gif" src="'+categoryGifs[key]+'" alt="A little romantic GIF for this message"><div class="category-memory"><video controls playsinline preload="metadata"><source src="'+video+'" type="video/mp4">Your browser cannot play this video.</video><p>'+categoryCaptions[key]+'</p></div>';
  document.getElementById('reveal').scrollIntoView({behavior:'smooth',block:'nearest'});
 }
 function showLetter(){document.getElementById('letter').classList.toggle('hidden');document.getElementById('letter').scrollIntoView({behavior:'smooth',block:'nearest'});document.getElementById('end').classList.remove('hidden');}
