@@ -82,18 +82,18 @@ button:focus-visible{outline:3px solid #d78aa8;outline-offset:3px}
 <div class="center"><div class="kicker">A little fairytale for my queen</div><h2>Your own rose garden 🌹</h2>
 <p class="small">A sunset picnic, soft lights, roses, and a teddy waiting to give you the biggest hug</p></div>
 <div class="scene-gallery">
-<div class="scene"><img src="assets/sunset-teddy-roses.png" alt="A teddy bear, roses, and a gift beneath a glowing sunset"><p>If I could plan the sweetest evening for you, it would be somewhere peaceful with roses, warm lights, your favourite treats, and me right beside you</p></div>
-<div class="scene"><img src="assets/queen-rose-garden.png" alt="A golden crown surrounded by roses in a fairytale garden"><p>For my queen: a crown to remind you that you deserve to feel treasured, respected, and loved every single day</p></div>
+<div class="scene"><img src="sunset-teddy-roses.png" alt="A teddy bear, roses, and a gift beneath a glowing sunset"><p>If I could plan the sweetest evening for you, it would be somewhere peaceful with roses, warm lights, your favourite treats, and me right beside you</p></div>
+<div class="scene"><img src="queen-rose-garden.png" alt="A golden crown surrounded by roses in a fairytale garden"><p>For my queen: a crown to remind you that you deserve to feel treasured, respected, and loved every single day</p></div>
 </div>
 <div class="kicker">Our little memories</div><h2>My favourite little moments with you 💞</h2>
 <p class="small">These are pieces of us I wanted to keep close</p></div>
 <div class="memory-grid">
-<div class="memory-card"><video controls playsinline preload="metadata" poster="assets/bouquet-cartoon.png"><source src="assets/memory-video-1.mp4" type="video/mp4"></video><p>A real little moment from us ❤️</p></div>
-<div class="memory-card"><video controls playsinline preload="metadata" poster="assets/sunset-teddy-roses.png"><source src="assets/memory-video-2.mp4" type="video/mp4"></video><p>One of my favourite memories to keep close</p></div>
-<div class="memory-card"><video controls playsinline preload="metadata" poster="assets/queen-rose-garden.png"><source src="assets/memory-video-3.mp4" type="video/mp4"></video><p>Just us, and a memory I treasure</p></div>
+<div class="memory-card"><video controls playsinline preload="metadata" poster="bouquet-cartoon.png"><source src="memory-video-1.mp4" type="video/mp4"></video><p>A real little moment from us ❤️</p></div>
+<div class="memory-card"><video controls playsinline preload="metadata" poster="sunset-teddy-roses.png"><source src="memory-video-2.mp4" type="video/mp4"></video><p>One of my favourite memories to keep close</p></div>
+<div class="memory-card"><video controls playsinline preload="metadata" poster="queen-rose-garden.png"><source src="memory-video-3.mp4" type="video/mp4"></video><p>Just us, and a memory I treasure</p></div>
 </div>
 <div class="musicbox center"><div class="kicker">Our soundtrack</div><h3>Dekhha Tenu ♫</h3><p class="small">A song that feels like looking at you and falling in love all over again</p>
-<audio id="loveSong" controls autoplay preload="auto" loop><source src="assets/dekhha-tenu.mp3" type="audio/mpeg">Your browser does not support audio playback.</audio>
+<audio id="loveSong" controls autoplay preload="auto" loop><source src="dekhha-tenu.mp3" type="audio/mpeg">Your browser does not support audio playback.</audio>
 <p class="small" id="musicStatus">The song will try to start automatically at 20% volume. If your browser blocks autoplay, tap the sanctuary button or play here ♫</p></div>
 <div class="center"><button class="soft" onclick="showLetter()">A letter from your biggest admirer 💗</button></div>
 <div class="reveal hidden" id="letter"><div class="letter">My beautiful girl,<br><br>I hope you know how precious you are to me. Not because you always have everything together, not because you keep being strong, and not because you make everyone else happy. Just because you are you.<br><br>I see how hard you try, even when you're tired. I see the heart you carry, the courage it takes to keep going, and the little ways you care. I wish you could see yourself through my eyes for a moment, because you'd understand why I'm so proud of you.<br><br>You deserve kindness on your difficult days, patience when things feel messy, laughter that comes easily, and love that doesn't ask you to earn it. You deserve to be celebrated, protected, respected, and spoiled with all the little things that make you smile.<br><br>I may not be beside you right now, but I'm cheering for you with my whole heart. I can't wait for the day I can hold your hand, take you somewhere lovely, and make you feel this loved in person.<br><br>You're my woman, my favourite person, and the love of my life. I believe in you, always.<br><br>All my love,<br>Your biggest admirer ❤️</div></div>
@@ -124,7 +124,7 @@ const categoryCaptions={seen:'A real little moment of us, because I want you to 
 function reveal(key,el){
  document.querySelectorAll('.tile').forEach(t=>t.classList.remove('active'));el.classList.add('active');
  const video=categoryClips[key];
- document.getElementById('reveal').innerHTML='<p>'+messages[key]+'</p><div class="category-memory"><video controls playsinline preload="metadata"><source src="assets/'+video+'" type="video/mp4">Your browser cannot play this video.</video><p>'+categoryCaptions[key]+'</p></div>';
+ document.getElementById('reveal').innerHTML='<p>'+messages[key]+'</p><div class="category-memory"><video controls playsinline preload="metadata"><source src="'+video+'" type="video/mp4">Your browser cannot play this video.</video><p>'+categoryCaptions[key]+'</p></div>';
  document.getElementById('reveal').scrollIntoView({behavior:'smooth',block:'nearest'});
 }
 function showLetter(){document.getElementById('letter').classList.toggle('hidden');document.getElementById('letter').scrollIntoView({behavior:'smooth',block:'nearest'});document.getElementById('end').classList.remove('hidden');}
