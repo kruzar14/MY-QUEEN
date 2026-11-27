@@ -51,10 +51,7 @@ button:focus-visible{outline:3px solid #d78aa8;outline-offset:3px}
 .scene img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
 .scene p{font:14px/1.6 system-ui;color:var(--muted);padding:0 17px 16px;margin:10px 0 0}
 
-.category-memory{margin-top:16px;border-radius:18px;overflow:hidden;background:#fff8fb;border:1px solid #f0dce5}
-.category-memory video{display:block;width:100%;max-height:330px;object-fit:contain;background:#2b1b24}
-.category-memory p{font:13px/1.6 system-ui;color:var(--muted);padding:10px 14px;margin:0}
-.category-gif{display:block;width:100%;max-height:360px;object-fit:contain;background:#170f14;border-radius:16px;margin:14px 0}
+ .category-gif{display:block;width:100%;max-height:360px;object-fit:contain;background:#fff8fb;border-radius:16px;margin:14px 0}
 </style>
 </head>
 <body><main class="wrap">
@@ -119,13 +116,11 @@ function startLoveSong(){
 }
 function enter(){document.getElementById('home').classList.add('hidden');document.getElementById('main').classList.remove('hidden');hearts();startLoveSong();}
 document.addEventListener('DOMContentLoaded',()=>{const audio=document.getElementById('loveSong');if(audio){audio.volume=0.08;audio.play().catch(()=>{const status=document.getElementById('musicStatus');if(status)status.textContent='Autoplay may be blocked by your browser. Press Open sanctuary to start the song at 8% volume ♫';});}});
-const categoryClips={seen:'memory-video-1.mp4',queen:'memory-video-2.mp4',proud:'memory-video-3.mp4',soft:'memory-video-1.mp4',open:'memory-video-2.mp4',future:'memory-video-3.mp4'};
 const categoryGifs={seen:'romantic-gif-1.gif',queen:'romantic-gif-2.gif',proud:'romantic-gif-3.gif',soft:'romantic-gif-4.gif'};
-const categoryCaptions={seen:'A real little moment of us, because I want you to remember how loved you are',queen:'A memory for my queen, with all the love and care you deserve',proud:'I am proud of you in this moment and in every little step you take',soft:'Take a breath and let this little memory keep you company',open:'A little piece of us for when you miss me',future:'One day we will make many more memories like this, together'};
 function reveal(key,el){
  document.querySelectorAll('.tile').forEach(t=>t.classList.remove('active'));el.classList.add('active');
- const video=categoryClips[key];
- document.getElementById('reveal').innerHTML='<p>'+messages[key]+'</p>'+(categoryGifs[key]?'<img class="category-gif" src="'+categoryGifs[key]+'" alt="A little romantic GIF for this message">':'')+'<div class="category-memory"><video controls playsinline preload="metadata"><source src="'+video+'" type="video/mp4">Your browser cannot play this video.</video><p>'+categoryCaptions[key]+'</p></div>';
+ const gif=categoryGifs[key];
+ document.getElementById('reveal').innerHTML='<p>'+messages[key]+'</p>'+(gif?'<img class="category-gif" src="'+gif+'" alt="A little romantic GIF" onerror="this.remove()">':'');
  document.getElementById('reveal').scrollIntoView({behavior:'smooth',block:'nearest'});
 }
 function showLetter(){document.getElementById('letter').classList.toggle('hidden');document.getElementById('letter').scrollIntoView({behavior:'smooth',block:'nearest'});document.getElementById('end').classList.remove('hidden');}
