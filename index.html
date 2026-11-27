@@ -116,7 +116,7 @@ function startLoveSong(){
 }
 function enter(){document.getElementById('home').classList.add('hidden');document.getElementById('main').classList.remove('hidden');hearts();startLoveSong();}
 document.addEventListener('DOMContentLoaded',()=>{const audio=document.getElementById('loveSong');if(audio){audio.volume=0.08;audio.play().catch(()=>{const status=document.getElementById('musicStatus');if(status)status.textContent='Autoplay may be blocked by your browser. Press Open sanctuary to start the song at 8% volume ♫';});}});
-const categoryGifs={seen:'romantic-gif-1.gif',queen:'romantic-gif-2.gif',proud:'romantic-gif-3.gif',soft:'romantic-gif-4.gif'};
+const categoryGifs={};
 const categoryGifCaptions={seen:'A little moment to remind you how loved you are ♡',queen:'For my queen, with all my love 🌹',proud:'A tiny celebration of you ✨',soft:'A soft little moment for a hard day 🫂'};
 const gifVersion='20261127';
 function reveal(key,el){
