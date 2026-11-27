@@ -117,10 +117,12 @@ function startLoveSong(){
 function enter(){document.getElementById('home').classList.add('hidden');document.getElementById('main').classList.remove('hidden');hearts();startLoveSong();}
 document.addEventListener('DOMContentLoaded',()=>{const audio=document.getElementById('loveSong');if(audio){audio.volume=0.08;audio.play().catch(()=>{const status=document.getElementById('musicStatus');if(status)status.textContent='Autoplay may be blocked by your browser. Press Open sanctuary to start the song at 8% volume ♫';});}});
 const categoryGifs={seen:'romantic-gif-1.gif',queen:'romantic-gif-2.gif',proud:'romantic-gif-3.gif',soft:'romantic-gif-4.gif'};
+const categoryGifCaptions={seen:'A little moment to remind you how loved you are ♡',queen:'For my queen, with all my love 🌹',proud:'A tiny celebration of you ✨',soft:'A soft little moment for a hard day 🫂'};
+const gifVersion='20261127';
 function reveal(key,el){
  document.querySelectorAll('.tile').forEach(t=>t.classList.remove('active'));el.classList.add('active');
  const gif=categoryGifs[key];
- document.getElementById('reveal').innerHTML='<p>'+messages[key]+'</p>'+(gif?'<img class="category-gif" src="'+gif+'" alt="A little romantic GIF" onerror="this.remove()">':'');
+ document.getElementById('reveal').innerHTML='<p>'+messages[key]+'</p>'+(gif?'<img class="category-gif" src="'+gif+'?v='+gifVersion+'" alt="A little romantic GIF" onerror="this.remove()"><p class="small">'+categoryGifCaptions[key]+'</p>':'');
  document.getElementById('reveal').scrollIntoView({behavior:'smooth',block:'nearest'});
 }
 function showLetter(){document.getElementById('letter').classList.toggle('hidden');document.getElementById('letter').scrollIntoView({behavior:'smooth',block:'nearest'});document.getElementById('end').classList.remove('hidden');}
